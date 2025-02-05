@@ -4,7 +4,7 @@ export default () => ({
     url: process.env.NEXT_PUBLIC_APP_URL,
   },
   api: {
-    port: Number(process.env.BOOKCUE_API_PORT),
+    port: Number(process.env.API_PORT),
   },
   database: {
     url: process.env.DATABASE_URL,

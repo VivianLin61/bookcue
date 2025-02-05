@@ -15,7 +15,7 @@ import {
   CoverCreateInput,
   IdentifierCreateInput,
   RatingCreateInput,
-} from '@bookcue/api/generated-db-types';
+} from '@bookshelf/api/generated-db-types';
 
 @InputType()
 export class BookDataInput {

@@ -242,7 +242,7 @@ export class UserBookResolver {
 
     // if successful send email
     // await this.resend.emails.send({
-    //   from: 'bookcue@vivianlin.dev',
+    //   from: 'bookshelf@vivianlin.dev',
     //   to: user.email,
     //   subject: 'Confirm your email',
     //   html: render(

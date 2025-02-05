@@ -8,7 +8,7 @@ import {
 import { getOpenLibraryBook } from 'libs/book/api/open-library.api';
 
 import ShortUniqueId from 'short-uuid';
-import { READING_STATUS, SOURCE } from '@bookcue/api/generated-db-types';
+import { READING_STATUS, SOURCE } from '@bookshelf/api/generated-db-types';
 
 export function getColumnData(csvContent, mappings) {
   // Split the CSV content into lines

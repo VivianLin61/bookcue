@@ -1,6 +1,6 @@
 // read-date.service.ts
 import { Injectable } from '@nestjs/common';
-import { ReadDate } from '@bookcue/api/generated-db-types';
+import { ReadDate } from '@bookshelf/api/generated-db-types';
 import { PrismaRepository } from 'prisma/prisma.repository';
 import { ReadDateRepository } from './read-date.repository';
 

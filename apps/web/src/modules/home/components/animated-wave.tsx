@@ -7,7 +7,7 @@ interface AnimatedWaveProps {}
 export const AnimatedWave: React.FC<AnimatedWaveProps> = ({}) => {
   return (
     <motion.span
-      className='ml-2 inline-block'
+      className='ml-2 inline-block cursor-default'
       whileHover={{
         rotate: [0, 14, -8, 14, -4, 10, 0],
       }}

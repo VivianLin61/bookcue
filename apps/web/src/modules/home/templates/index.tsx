@@ -48,23 +48,10 @@ export default function HomeTemplate({
             </div>
           </section>
           <ReadingOverview bookCounts={bookCounts} />
-          {currentlyReading.length > 0 ? (
-            <CurrentlyReadingSection
-              count={bookCounts.readingCount}
-              currentlyReading={currentlyReading}
-            />
-          ) : (
-            <>
-              <div className='p-4'>
-                <Button className='w-full justify-start border border-dashed border-gray-200 hover:border-gray-300 hover:bg-gray-50/50'>
-                  <Plus className='mr-2 h-4 w-4 text-gray-500' />
-                  <span className='text-sm text-gray-600'>
-                    Add new assignment
-                  </span>
-                </Button>
-              </div>
-            </>
-          )}
+          <CurrentlyReadingSection
+            count={bookCounts.readingCount}
+            currentlyReading={currentlyReading}
+          />
         </div>
         <div className='grid grid-cols-1 gap-4 xl:col-span-5'>
           <section aria-labelledby='section-2-title'>
@@ -72,16 +59,16 @@ export default function HomeTemplate({
               <div className='py-4 shadow-md'>
                 <div className='space-y-4'>
                   <StatusBooksCard
-                    title={'Want to Read'}
-                    upNext={wantToRead}
-                    count={bookCounts.wantsToReadCount}
-                    status={Reading_Status.WantToRead}
-                  />
-                  <StatusBooksCard
                     title={'Up Next'}
                     upNext={upNext}
                     count={bookCounts.upNextCount}
                     status={Reading_Status.UpNext}
+                  />
+                  <StatusBooksCard
+                    title={'Want to Read'}
+                    upNext={wantToRead}
+                    count={bookCounts.wantsToReadCount}
+                    status={Reading_Status.WantToRead}
                   />
                 </div>
               </div>

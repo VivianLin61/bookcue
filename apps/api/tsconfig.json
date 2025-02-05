@@ -15,22 +15,22 @@
         "allowJs": true,
         "jsx": "react-jsx",
         "paths": {
-            "@bookcue/api/user": [
+            "@bookshelf/api/user": [
                 "libs/user"
             ],
-            "@bookcue/api/generated-db-types": [
+            "@bookshelf/api/generated-db-types": [
                 "src/generated-db-types"
             ],
-            "@bookcue/api/health": [
+            "@bookshelf/api/health": [
                 "libs/health"
             ],
-            "@bookcue/api/auth": [
+            "@bookshelf/api/auth": [
                 "libs/auth"
             ],
-            "@bookcue/api/book": [
+            "@bookshelf/api/book": [
                 "libs/book"
             ],
-            "@bookcue/api/user-book": [
+            "@bookshelf/api/user-book": [
                 "libs/user-book"
             ],
         }

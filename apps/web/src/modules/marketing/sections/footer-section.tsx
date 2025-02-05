@@ -51,7 +51,7 @@ const FooterSection: React.FC<FooterSectionProps> = () => {
             ))}
           </div>
           <div className='mt-6 text-xs text-zinc-700'>
-            Copyright © 2024 Bookcue. Book data from
+            Copyright © 2024 Bookshelf. Book data from
             <Link className='ml-1 underline underline-offset-2' href={''}>
               Google Books API.
             </Link>

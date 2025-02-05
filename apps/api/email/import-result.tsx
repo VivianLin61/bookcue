@@ -10,7 +10,7 @@ import {
   Section,
   Text,
   Hr,
-} from "@react-email/components";
+} from '@react-email/components';
 
 interface ImportSummaryEmailProps {
   totalBooks: string;
@@ -52,11 +52,11 @@ export const ImportSummaryEmail = ({
               Total Books: <span className="font-normal">{totalBooks}</span>
             </Text>
             <Text className="m-0 font-bold">
-              Successfully imported books:{" "}
+              Successfully imported books:{' '}
               <span className="font-normal">{successBooks}</span>
             </Text>
             <Text className="m-0 font-bold">
-              Failed imported books:{" "}
+              Failed imported books:{' '}
               <span className="font-normal">{failedBooks}</span>
             </Text>
           </Container>
@@ -69,7 +69,7 @@ export const ImportSummaryEmail = ({
 
           <Hr className="border-gray-200 my-4" />
           <Link href={summaryLink} className="text-xs text-gray-400">
-            Bookcue
+            Bookshelf
           </Link>
         </Container>
       </Body>
@@ -78,12 +78,12 @@ export const ImportSummaryEmail = ({
 );
 
 ImportSummaryEmail.PreviewProps = {
-  username: "Vivian",
-  totalBooks: "100",
-  successBooks: "103",
-  failedBooks: "4",
-  importId: "12",
-  summaryLink: "https://localhost:3000",
+  username: 'Vivian',
+  totalBooks: '100',
+  successBooks: '103',
+  failedBooks: '4',
+  importId: '12',
+  summaryLink: 'https://localhost:3000',
 } as ImportSummaryEmailProps;
 
 export default ImportSummaryEmail;

@@ -1,4 +1,4 @@
-import { IdentifierWhereInput } from '@bookcue/api/generated-db-types';
+import { IdentifierWhereInput } from '@bookshelf/api/generated-db-types';
 import { Field, InputType } from '@nestjs/graphql';
 import { IsNotEmpty, IsString, ValidateNested } from 'class-validator';
 

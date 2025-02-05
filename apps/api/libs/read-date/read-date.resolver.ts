@@ -4,7 +4,7 @@ import {
   PROGRESS_TYPE,
   ReadDate,
   ReadingProgress,
-} from '@bookcue/api/generated-db-types';
+} from '@bookshelf/api/generated-db-types';
 import { Prisma } from '@prisma/client';
 
 @Resolver(() => ReadDate)

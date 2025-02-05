@@ -1,4 +1,4 @@
-import { READING_STATUS } from '@bookcue/api/generated-db-types';
+import { READING_STATUS } from '@bookshelf/api/generated-db-types';
 import { Field, InputType } from '@nestjs/graphql';
 import { IsInt, IsOptional, IsString, ValidateNested } from 'class-validator';
 // requests no inputs

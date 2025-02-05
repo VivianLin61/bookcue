@@ -66,7 +66,7 @@ export const ShelfItem: React.FC<ShelfItemProps> = ({
               isHovered ? 'text-beige-700' : 'text-gray-400'
             }`}
           >
-            {shelf._count.userBooks}
+            {isShelves && <div>{shelf._count.userBooks}</div>}
           </span>
         </div>
       )}

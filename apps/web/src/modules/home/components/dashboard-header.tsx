@@ -12,7 +12,6 @@ function DashboardHeader({
   count?: number;
   href: string;
 }) {
-  // Wait for the playlists
   return (
     <>
       <h2 className={cn('space-x-4')}>

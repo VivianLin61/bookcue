@@ -2,7 +2,7 @@ import {
   Book,
   BookWhereUniqueInput,
   IdentifierCreateInput,
-} from '@bookcue/api/generated-db-types';
+} from '@bookshelf/api/generated-db-types';
 import { Resolver, Args, Query, Mutation, Int } from '@nestjs/graphql';
 import { BookService } from './book.service';
 import { UseGuards } from '@nestjs/common';

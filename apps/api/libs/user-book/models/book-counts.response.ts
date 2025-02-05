@@ -1,4 +1,4 @@
-import { UserBook } from '@bookcue/api/generated-db-types';
+import { UserBook } from '@bookshelf/api/generated-db-types';
 import { Field, ObjectType } from '@nestjs/graphql';
 import { IsNumber } from 'class-validator';
 

@@ -5,6 +5,8 @@ import { UserBook } from '@/graphql/graphql';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { Plus } from 'lucide-react';
 
 interface StatusBooksCardProps {
   upNext: UserBook[];
@@ -34,15 +36,25 @@ const StatusBooksCard: React.FC<StatusBooksCardProps> = ({
         </div>
       </CardHeader>
       <CardContent className='px-4'>
-        {upNext.length > 0 && (
-          <div className={cn('flex flex-col gap-4')}>
-            {upNext.map((book, idx) => (
+        <div className={cn('flex flex-col gap-4')}>
+          {upNext.length > 0 &&
+            upNext.map((book, idx) => (
               <div className='rounded-lg bg-beige-100/80 px-4'>
                 <BookCard key={idx} userBook={book} />
               </div>
             ))}
-          </div>
-        )}
+          <Button
+            className={`cursor-pointer items-center justify-center rounded-md border border-gray-200 bg-white text-black shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-beige-700 hover:bg-beige-100`}
+          >
+            <span className='sr-only'>Edit Shelf</span>
+            <div className='flex gap-2'>
+              <div className='flex items-center justify-center'>
+                <Plus className={`h-4 w-4 `} />
+              </div>
+              Add a book
+            </div>
+          </Button>
+        </div>
       </CardContent>
     </Card>
   );

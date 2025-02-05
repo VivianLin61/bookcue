@@ -4,7 +4,7 @@ import {
   Identifier,
   IdentifierCreateInput,
   SOURCE,
-} from '@bookcue/api/generated-db-types';
+} from '@bookshelf/api/generated-db-types';
 import { Book } from '@prisma/client';
 
 @Injectable()

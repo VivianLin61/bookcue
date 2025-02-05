@@ -1,4 +1,4 @@
-import { SOURCE } from '@bookcue/api/generated-db-types';
+import { SOURCE } from '@bookshelf/api/generated-db-types';
 import { BookData, GoodreadsBook } from 'libs/user-book/types';
 import axiosInstance from 'src/config/axios.config';
 export async function getOpenLibraryBook(book: GoodreadsBook) {

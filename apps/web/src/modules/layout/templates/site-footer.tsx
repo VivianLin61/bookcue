@@ -19,7 +19,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
           </h1>
         </div>
         <p className='text-center text-sm leading-loose md:text-left'>
-          © 2022 Bookcue. All rights Reserverd . Book data from{' '}
+          © 2022 Bookshelf. All rights Reserverd . Book data from{' '}
           <a
             href='https://developers.google.com/books'
             target='_blank'

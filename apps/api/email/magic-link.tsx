@@ -46,7 +46,7 @@ export const MagicLinkEmail = ({ loginCode }: MagicLinkEmailProps) => (
           </Text>
           <Hr className="border-gray-200 my-4" />
           <Link href={'localhost:3000'} className="text-xs text-gray-400">
-            Bookcue
+            Bookshelf
           </Link>
         </Container>
       </Body>

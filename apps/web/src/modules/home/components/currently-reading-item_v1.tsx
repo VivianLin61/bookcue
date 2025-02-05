@@ -4,11 +4,11 @@ import React from 'react';
 import useUserBookStore from '@/stores/use-user-book-store';
 import BookCover from '@/components/book-cover';
 import { getCoverUrl, formatAuthors } from '@/lib/utils';
-
 import { Progress } from '@/components/ui/progress';
 import useProgressModal from '@/components/modals/progress-modal.tsx/use-progress-modal';
 import { Pencil } from 'lucide-react';
 import { IconButton } from '@/modules/bookshelves/components/icon-button';
+import Link from 'next/link';
 
 interface CurrentlyReadingItemProps {
   userBook: UserBook;
@@ -20,6 +20,7 @@ const convertPercentProgressToPages = (
 ) => {
   return Math.round((percentProgress / 100) * capacity);
 };
+
 const covertPageProgressToPercent = (
   pageProgress: number,
   capacity: number
@@ -54,39 +55,35 @@ export const CurrentlyReadingItem: React.FC<CurrentlyReadingItemProps> = ({
 
   const { book } = userBook;
   return (
-    <>
-      <div className='border-grey-200 flex flex-row gap-4 rounded-md border bg-white p-4 transition duration-300'>
-        <div className='w-20 flex-shrink-0 overflow-hidden rounded-md shadow-sm'>
-          <BookCover src={getCoverUrl(book, Size.Small)} size={'sm'} />
-        </div>
-        <div className='flex w-full flex-col justify-between'>
-          <div className='flex w-full flex-col gap-1'>
-            <div className='line-clamp-2 overflow-hidden text-base font-medium text-stone-700'>
-              {book.title}
-            </div>
-            <div className='line-clamp-1 overflow-hidden text-xs text-gray-400'>
-              by {formatAuthors(book.authors!)}
-            </div>
-            {/* <RatingInfo size={'sm'} ratings={hit?.ratings || []} /> */}
+    <div className='border-grey-200 flex cursor-pointer flex-row gap-4 rounded-md border bg-white p-4 transition duration-300'>
+      <div className='w-20 flex-shrink-0 overflow-hidden rounded-md shadow-sm'>
+        <BookCover src={getCoverUrl(book, Size.Small)} size={'sm'} />
+      </div>
+      <div className='flex w-full flex-col justify-between'>
+        <div className='flex w-full flex-col gap-1'>
+          <div className='line-clamp-2 overflow-hidden text-base font-medium text-stone-700'>
+            {book.title}
           </div>
+          <div className='line-clamp-1 overflow-hidden text-xs text-gray-400'>
+            by {formatAuthors(book.authors!)}
+          </div>
+        </div>
 
-          <div className='mt-1 flex flex-col '>
-            <div className='flex items-center justify-between gap-2'>
-              <div className='h-fit w-[85%] rounded-md border border-gray-200 bg-white px-2 py-2 text-center text-beige shadow-sm'>
-                <div className='flex items-center gap-1'>
-                  <Progress
-                    className='align-middle'
-                    value={percentProgress || 0}
-                  />
-                  <div className='ml-2 min-w-2 text-xs font-medium text-gray-500'>
-                    {percentProgress || 0}%
-                  </div>
+        <div className='mt-1 flex flex-col'>
+          <div className='flex items-center justify-between gap-4'>
+            <div className='flex w-[100%] flex-col'>
+              <div className='mb-1 flex justify-between text-xs font-medium text-beige-700'>
+                <div className='text-gray-400'>
+                  {pageProgress} / {readDate?.readingProgress?.capacity} pages
                 </div>
+                <div className=''> {percentProgress || 0}%</div>
               </div>
-
+              <Progress className='align-middle' value={percentProgress || 0} />
+            </div>
+            <div className='flex justify-end'>
               <IconButton
                 onClick={(e) => {
-                  e.stopPropagation();
+                  e.stopPropagation(); // Prevents the Link from being triggered
                   if (readDate?.readingProgress) {
                     onOpen();
                     setUserBook({
@@ -95,31 +92,17 @@ export const CurrentlyReadingItem: React.FC<CurrentlyReadingItemProps> = ({
                     });
                   }
                 }}
-                className={`h-8 w-8 rounded-sm`}
+                className={`h-8 w-8 rounded-sm bg-white`}
               >
-                <span className='sr-only'>Like Book</span>
+                <span className='sr-only'>Edit Progress</span>
                 <Pencil className={`h-4 w-4 items-center`} />
               </IconButton>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
-export default CurrentlyReadingItem;
 
-// <section className='bg-white '>
-//   <div className=' flex justify-between'>
-//     {/* <DashboardHeader
-//       href={`/library?status=${Reading_Status.Reading}`}
-//       title={'Currently Reading'}
-//       count={count}
-//     /> */}
-//   </div>
-//   <div className='grid grid-cols-1 gap-4 md:grid-cols-2'>
-//     {currentlyReading.map((book, idx) => (
-//       <CurrentlyReadingItem key={idx} userBook={book} />
-//     ))}
-//   </div>
-// </section>
+export default CurrentlyReadingItem;
